@@ -25,3 +25,17 @@ if __name__ == "__main__":
     port = int(os.getenv('HBNB_API_PORT', '5000'))
     # Run the Flask app
     app.run(host=host, port=port, threaded=True)
+
+
+# Define a custom 404 error handler
+@app.errorhandler(404)
+def not_found_error(error):
+    return jsonify({"error": "Not found"}), 404
+
+# Example route (optional, for testing purposes)
+@app.route('/')
+def index():
+    return jsonify({"message": "Welcome to the API!"})
+
+if __name__ == "__main__":
+    app.run(debug=True)
