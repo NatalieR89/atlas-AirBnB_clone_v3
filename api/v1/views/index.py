@@ -11,3 +11,20 @@ from flask import jsonify
 def status():
     """Returns a JSON response indicating the status of the API."""
     return jsonify({"status": "OK"})
+
+def get_stats():
+    """
+    Retrieves the number of each object by type.
+    """
+    # Define the models to count
+    model_counts = {
+        "amenities": storage.count("Amenity"),
+        "cities": storage.count("City"),
+        "places": storage.count("Place"),
+        "reviews": storage.count("Review"),
+        "states": storage.count("State"),
+        "users": storage.count("User")
+    }
+
+    # Return the counts as JSON
+    return jsonify(model_counts)
