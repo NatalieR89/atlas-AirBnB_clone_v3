@@ -11,7 +11,7 @@ import os
 # Initialize Flask application
 app = Flask(__name__)
 
-# Enable CORS for all routes on the server, 
+# Enable CORS for all routes on the server,
 # allowing all origins (especially 0.0.0.0 for local development)
 CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
