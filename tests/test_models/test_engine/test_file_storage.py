@@ -3,6 +3,7 @@
 Contains the TestFileStorageDocs classes
 """
 
+
 from datetime import datetime
 import inspect
 import models
@@ -113,3 +114,15 @@ class TestFileStorage(unittest.TestCase):
         with open("file.json", "r") as f:
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
+
+    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
+    def test_count_all(self):
+        """ test count method with objects """
+        count = storage.count()
+        self.assertEqual(count, len(storage.all()))
+
+    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
+    def test_count_by_class(self):
+        """ test specific class counting """
+        count = storage.count(State)
+        self.assertEqual(count, len(storage.all(State)))
