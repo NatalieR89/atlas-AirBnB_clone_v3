@@ -16,7 +16,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
 
 # Register the blueprint for API views
-# app.register_blueprint(app_views) # tagging this out for testing purposes
+app.register_blueprint(app_views)
 
 
 # Define teardown_appcontext to close storage after each request
