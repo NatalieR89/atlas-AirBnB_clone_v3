@@ -19,14 +19,12 @@ def get_stats():
     """
     Retrieves the number of each object type by calling storage.count()
     """
-    objects = {"amenities": 'Amenity', "cities": 'City',
-               "places": 'Place', "reviews": 'Review',
-               "states": 'State', "users": 'User'}
-    stats = {}
-    try:
-        for key, value in objects.items():
-            stats[key] = storage.count(value)
-            print(f"Count of {value}: {stats[key]}")
-            return jsonify(stats)
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500 
+    stats = {
+        "User": storage.count("User"),
+        "Place": storage.count("Place"),
+        "City": storage.count("City"),
+        "Amenity": storage.count("Amenity"),
+        "Review": storage.count("Review"),
+        "State": storage.count("State")
+    }
+    return jsonify(stats)
