@@ -41,11 +41,11 @@ def index():
 
 
 if __name__ == "__main__":
-    # Set the host, port, and debug mode from,
+    # Set the host, port, and debug mode from
     # environment variables or default values
     host = os.getenv('HBNB_API_HOST', '0.0.0.0')
     port = int(os.getenv('HBNB_API_PORT', '5000'))
     debug = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
-    
+
     # Run the Flask app
     app.run(host=host, port=port, threaded=True, debug=debug)
