@@ -41,8 +41,7 @@ def index():
 
 
 if __name__ == "__main__":
-    # Set the host, port, and debug mode from
-    # environment variables or default values
+    """ Set host, port, debug mode from enviorn variables or defaults """
     host = os.getenv('HBNB_API_HOST', '0.0.0.0')
     port = int(os.getenv('HBNB_API_PORT', '5000'))
     debug = os.getenv('FLASK_DEBUG', 'false').lower() == 'true'
