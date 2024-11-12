@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''module'''
 
-from flask import Flask, jsonify, abort, request
+from flask import Flask, jsonify, abort, request, Blueprint
 from models import storage
 from models.city import City
 from models.place import Place

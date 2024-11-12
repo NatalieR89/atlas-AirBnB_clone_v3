@@ -2,7 +2,7 @@
 '''Module'''
 
 
-from flask import jsonify, abort, request
+from flask import jsonify, abort, request, Blueprint
 from models import storage
 from models.state import State
 from api.v1.views import app_views
