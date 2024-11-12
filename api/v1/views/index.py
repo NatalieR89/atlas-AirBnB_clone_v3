@@ -11,7 +11,7 @@ from models import storage  # Assuming storage is initialized in models/__init__
 @app_views.route('/api/vi/status', methods=['GET'], strict_slashes=False)
 def status():
     """ Returns JSON """
-    return jsonify(status="OK")
+    return jsonify({'status': 'OK'})
 
 
 @app_views.route('/api/v1/stats', methods=['GET'])
