@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-
 '''module'''
+
 
 from flask import Flask, jsonify, abort, request
 from models.user import User  # Assume User model is correctly set up
 from models import storage  # Assumes storage is the data management layer
 from api.v1.views import app_views
+
 
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def get_users():
