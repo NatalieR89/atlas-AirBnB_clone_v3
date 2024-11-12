@@ -2,11 +2,12 @@
 
 '''Flask API module with CORS enabled'''
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, Blueprint
 from flask_cors import CORS  # Import CORS
 from models import storage
 from api.v1.views import app_views
 import os
+from os import getenv
 
 # Initialize Flask application
 app = Flask(__name__)

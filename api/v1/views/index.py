@@ -2,7 +2,7 @@
 '''module'''
 
 
-from flask import jsonify
+from flask import jsonify, Blueprint
 from api.v1.views import app_views
 from models import storage
 # Assuming storage is initialized in models/__init__.py
