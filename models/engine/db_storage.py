@@ -75,7 +75,6 @@ class DBStorage:
         """call remove() method on the private session attribute"""
         self.__session.remove()
 
-
     def get(self, cls, id):
         """Retrieve an object based on class and ID"""
         if cls and id:
@@ -83,11 +82,12 @@ class DBStorage:
         return None
 
     def count(self, cls=None):
-        """Count number of objects in storage. If cls is None, count all objects."""
+        """Count num of objs in storage If cls is None count all obj."""
         if cls:
             return self.__session.query(cls).count()
         else:
             total_count = 0
-            for subclass in self.all_classes:  # assuming all_classes has all models in the storage
+            for subclass in self.all_classes:
                 total_count += self.__session.query(subclass).count()
             return total_count
+            # assume all_classes has all models in the storage
