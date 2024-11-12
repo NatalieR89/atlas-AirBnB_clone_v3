@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 '''module'''
 
 
@@ -10,7 +9,7 @@ from models import storage
 
 
 @app_views.route('/status', methods=['GET'], strict_slashes=False)
-def status():
+def get_status():
     """ Returns JSON """
     return jsonify({"status": "OK"})
 
